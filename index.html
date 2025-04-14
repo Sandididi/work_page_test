@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Performics Taiwan">
+    <link rel="apple-touch-icon" href="https://storage.googleapis.com/www.performics.com.tw/logo192.png">
+    <link rel="icon" href="https://storage.googleapis.com/www.performics.com.tw/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Lab - Performics Taiwan</title>
+    <link rel="stylesheet" href="static/css/sidedemo.css">
+    <link rel="stylesheet" href="static/css/mainstyle.css">
+</head>
+
+<body>
+    <aside class="" id="sidebar">
+        <button id="close_sideNav"></button>
+        <div class="explab"><img src="static/media/logo_exlab_side.svg" alt="logo_exlab"></div>
+        <ul>
+            <li class="active"><a href="">Rich Media</a></li>
+            <li><a href="pages/vpaid.html">Interactive Video</a></li>
+            <li><a href="pages/shoppableAd.html">Shoppable Ad</a></li>
+        </ul>
+        <a class="logo" href="#"><img src="static/media/logo-white.svg" alt="performicsLogo"></a>
+    </aside>
+    <header>
+        <div class="header-wrap-btn">
+            <button id="open-sideNav"></button>
+            <div class="navbtns">
+                <a class="headlogo" href="#"><img src="static/media/logo_exlab_large.svg" alt="expLab_Logo"></a>
+                <ul>
+                    <li><a class="active" href="#">Rich Media</a></li>
+                    <li><a href="pages/vpaid.html">Interactive Video</a></li>
+                    <li><a href="pages/shoppableAd.html">Shoppable Ad</a></li>
+                </ul>
+            </div>
+            <div class="lang">
+                <a href="#zh-tw" id="zh-tw" key="langBtnTw">中</a>/<a class="active" href="#en" id="en-gb"
+                    key="langBtnEn">ENG</a>
+            </div>
+        </div>
+        <div class="context">
+            <h2>Rich Media Gallery</h2>
+            <p>We create <span>customized</span>, interactive ad formats and strategically select media to <span>make
+                    your brand stand out</span>, driving user engagement and clicks.</p>
+            <div class="adGallery_switch">
+                <input type="radio" id="format" name="tab" checked>
+                <label for="format">All Format</label>
+
+                <input type="radio" id="showcase" name="tab">
+                <label for="showcase">Show Case</label>
+            </div>
+        </div>
+
+    </header>
+    <main id="mainPage"></main>
+    <footer>
+        <div>
+            <a href="#"><img src="static/media/Logo-full.svg" alt="Logo"></a>
+            <button onclick="toTop()" id="toTop">
+                <p>Back to TOP</p><i class="demo-icon">&#xe805;</i>
+            </button>
+        </div>
+        <hr>
+        <div>
+            <a class="privacy" href="https://www.performics.com/performics-privacy-policy/">Privacy Policy</a>
+            <p>&copy; 2025 Performics Taiwan</p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+    <script>
+        //sidebar
+        const openSidebtn = document.querySelector('#open-sideNav');
+        const closeSidebtn = document.querySelector('#close_sideNav');
+        const SidebarNav = document.querySelector('#sidebar');
+        const containMain = document.querySelector('#mainPage');
+
+        openSidebtn.addEventListener('click', () => {
+            SidebarNav.classList.add('active');
+        });
+        function closeSidebar() {
+            SidebarNav.classList.remove('active');
+        }
+        containMain.addEventListener('click', closeSidebar);
+        closeSidebtn.addEventListener('click', closeSidebar);
+
+        //toTop
+        function toTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

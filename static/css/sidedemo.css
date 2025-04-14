@@ -1,0 +1,241 @@
+body {
+  position: relative;
+}
+
+.sideDemo {
+  position: fixed;
+  display: flex;
+  height: 100vh;
+  width: 50vw;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  box-shadow: inset 0px 0px 20px rgba(18, 18, 18, 0.2);
+  filter: drop-shadow(-20px 0px 0px rgba(18, 18, 18, 0.4));
+  transform: translateX(110%);
+  transition: all 0.6s;
+  z-index: 10;
+}
+
+.sideDemo.active {
+  filter: drop-shadow(-20px 0px 20px rgba(18, 18, 18, 0.4));
+  transform: translateX(0%);
+}
+
+.demoView, .demoInfo {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+.demoView {
+  width: 100%;
+  min-width: 360px;
+  background-color: #EDEDEE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: inset 0px 0px 20px rgba(18, 18, 18, 0.2);
+}
+.demoView .fakeText {
+  width: 100%;
+  flex: none;
+}
+.demoView .fakeText span {
+  display: block;
+  height: 24px;
+  background-color: rgba(78, 78, 81, 0.2);
+  margin: 12px 0px;
+}
+.demoView .fakeText span:nth-child(1) {
+  height: 40px;
+}
+.demoView iframe {
+  margin: 20px auto;
+  box-shadow: 0px 0px 8px #F8F8F8;
+}
+.demoView iframe.ad-small {
+  width: 300px;
+  height: 250px;
+  min-height: 250px;
+}
+.demoView iframe.ad-mid {
+  width: 320px;
+  height: 480px;
+  min-height: 480px;
+}
+.demoView iframe.ad-large {
+  width: 300px;
+  height: 600px;
+  min-height: 600px;
+}
+
+.demoInfo, .infoContext {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.demoInfo {
+  padding-right: 40px;
+}
+
+.infoContext .temptitle {
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 40px;
+}
+.infoContext .tempsub {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.tempdesc {
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.d-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 16px 0px;
+}
+.d-tags li {
+  margin: 4px 16px 4px 0px;
+  padding: 5px 10px 6px;
+  line-height: 1;
+  border: 1px solid #121212;
+  border-radius: 18px;
+  color: #121212;
+  font-size: 16px;
+}
+
+.d-device {
+  margin: 4px;
+  color: #121212;
+  font-size: 18px;
+}
+.d-device p {
+  display: inline;
+  line-height: 1.2;
+}
+.d-device i {
+  font-size: 28px;
+  color: #4E4E51;
+}
+
+.adspec {
+  position: relative;
+  margin: 12px 0px 40px;
+  width: 100%;
+}
+.adspec a {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  width: 120px;
+  padding: 10px 16px;
+  text-decoration: none;
+  text-align: center;
+  color: #121212;
+  font-family: "Gabarito", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border: 1px solid #121212;
+  border-radius: 8px;
+  background-color: #F8F8F8;
+  filter: drop-shadow(0px 3px 0px #1E9A4B);
+}
+
+.d-other {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.d-other img {
+  cursor: pointer;
+  grid-column: span 1;
+  width: 100%;
+  background-color: #EDEDEE;
+  box-shadow: 0px 0px 4px rgba(18, 18, 18, 0.2);
+}
+
+#d-close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.d-page {
+  display: flex;
+  justify-content: space-between;
+}
+.d-page button {
+  background: none;
+  border: none;
+  padding: 20px 0px;
+}
+
+@media (max-width: 1360px) {
+  .sideDemo {
+    width: 75vw;
+  }
+}
+@media (max-width: 1080px) {
+  .sideDemo {
+    width: 100%;
+  }
+  .demoInfo {
+    padding: 40px 20px;
+  }
+}
+@media (max-width: 620px) {
+  .sideDemo {
+    position: fixed;
+    height: 100vh;
+    overflow-y: scroll;
+    flex-direction: column;
+  }
+  .sideDemo .demoView, .sideDemo .demoInfo {
+    overflow-y: unset;
+    padding: 8px 22px;
+  }
+  .sideDemo .demoView {
+    height: auto;
+  }
+  .sideDemo .demoView span {
+    margin: 8px 0px;
+    height: 12px;
+  }
+  .sideDemo .demoView span:nth-child(1) {
+    height: 20px;
+  }
+  .sideDemo .demoView iframe {
+    margin: 12px auto;
+  }
+  .sideDemo .demoInfo {
+    gap: 12px;
+  }
+  .sideDemo .fakeText {
+    display: block;
+  }
+  #d-close {
+    background-color: rgba(248, 248, 248, 0.6);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .infoContext .tempsub {
+    margin-top: 8px;
+  }
+  .adspec {
+    margin: 20px 0px;
+  }
+  .d-other {
+    padding-bottom: 40px;
+  }
+}/*# sourceMappingURL=sidedemo.css.map */
